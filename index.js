@@ -5,15 +5,19 @@ const app = express();
 app.get('/', (req, res) => {
   res.send(`
     <div>
-      <form>
-        <input placeholder="email" />
-        <input placeholder="password" />
-        <input placeholder="password" />
+      <form method="POST">
+        <input name="email" placeholder="email" />
+        <input name="password" placeholder="password" />
+        <input name="passowordConfirmation" placeholder="password" />
         <button>Sign Up</button>
       </form>
     </div>
   `);
 });
+
+app.post('/', (req, res) => {
+  res.send('Account created!')
+})
 
 app.listen(3000, () => {
   console.log('Listening on port 3000')
