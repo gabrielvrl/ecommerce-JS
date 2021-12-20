@@ -32,6 +32,8 @@ app.post('/', async (req, res) => {
     return res.send('Password must match')
   }
 
+  await usersRepo.create({ email, password });
+
   res.send('Account created!')
 })
 
